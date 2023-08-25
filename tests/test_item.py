@@ -17,7 +17,8 @@ def test_calculate_total_price(test_file):
 
 def test_apply_discount(test_file):
     Item.pay_rate = 0.5
-    assert test_file.apply_discount() == 50000
+    test_file.apply_discount()
+    assert test_file.price == 50000
 
 
 def test_name(test_file):
