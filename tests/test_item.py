@@ -5,6 +5,7 @@ from src.item import Item
 import pytest
 
 
+
 @pytest.fixture()
 def test_file():
     emp1 = Item('iPhone', 100000, 5)
@@ -44,3 +45,9 @@ def test_string_to_number(test_file):
     assert Item.string_to_number('6.9') == 6
     assert Item.string_to_number(553.654) == 553
     assert Item.string_to_number(92134.0) == 92134
+
+def test_str(test_file):
+    assert str(test_file) == 'iPhone'
+
+def test_repr(test_file):
+    assert repr(test_file) == "Item('iPhone', 100000, 5)"
