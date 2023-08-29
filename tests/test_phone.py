@@ -19,7 +19,7 @@ def test_init():
 
 def test_phone_invalid_number_of_sim():
     with pytest.raises(ValueError):
-        phone = Phone("Samsung", 599, 5, [2, 5, 6])
+        phone = Phone("Samsung", 599, 5, -2)
 
 def test_add_different_types():
     with pytest.raises(TypeError):
