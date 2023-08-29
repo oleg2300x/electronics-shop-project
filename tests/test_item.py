@@ -56,4 +56,9 @@ def test_add():
     emp1 = Item('Laptop1', 1000400, 20)
     emp2 = Item('Laptop', 100000, 10)
     assert emp2 + emp1 == 30
-    assert emp1 + 1000 == None
+    # assert emp1 + 1000 == None
+
+def test_add_different_types():
+    emp3 = Item('Laptop', 100000, 10)
+    with pytest.raises(TypeError):
+        emp3 + 10

@@ -32,7 +32,7 @@ class Item:
         if isinstance(other, self.__class__):
             return self.quantity + other.quantity
         else:
-            return None
+            raise TypeError('Нельзя складывать обэекты не принадлежавшие клаccу Phone и Item')
 
     @property
     def name(self):
@@ -69,9 +69,5 @@ class Item:
     def string_to_number(num):
         return int(float(num))
 
-
-emp2 = Item('Laptop', 100000, 10)
-result = emp2 + 10
-print(result)
 
 
