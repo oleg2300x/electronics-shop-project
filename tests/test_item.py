@@ -51,3 +51,9 @@ def test_str(test_file):
 
 def test_repr(test_file):
     assert repr(test_file) == "Item('iPhone', 100000, 5)"
+
+def test_add():
+    emp1 = Item('Laptop1', 1000400, 20)
+    emp2 = Item('Laptop', 100000, 10)
+    assert emp2 + emp1 == 30
+    assert emp1 + 1000 == None
