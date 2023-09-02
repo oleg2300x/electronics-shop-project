@@ -18,6 +18,15 @@ def test_language():
     mix2 = MixinLanguage()
     mix2.language = 'EN'
     assert mix2.language == 'EN'
+    mix2.language = 'RU'
+    assert mix2.language == 'RU'
+
+def test_invalid_keyboard():
+    mixinvalidkb = MixinLanguage()
+    with pytest.raises(AttributeError):
+        mixinvalidkb.language = 'TR'
+
+
 
 def test_keyboard_init():
     keybord = Keyboard('Hiper 2000', 100000, 4)
