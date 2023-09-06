@@ -76,8 +76,8 @@ class Item:
                     cls(row.get('name'), float(row.get('price')), int(row.get('quantity')))
         except FileNotFoundError:
             raise FileNotFoundError('Отсутствует файл item.csv')
-        except InstantiateCSVError as ex:
-            print(ex.massage)
+        except (ValueError, TypeError):
+            raise InstantiateCSVError('Файл item.csv поврежден.')
     @staticmethod
     def string_to_number(num):
         return int(float(num))
